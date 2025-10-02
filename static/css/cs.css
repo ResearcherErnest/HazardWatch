@@ -1,0 +1,321 @@
+/* ================================
+   🎨 Variables & Reset
+=================================*/
+:root {
+  --primary-color: #2c7be5;
+  --secondary-color: #3498db;
+  --success-color: #28a745;
+  --body-bg: #f5f7fa;
+  --text-dark: #333;
+  --text-light: #666;
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Arial", sans-serif;
+  background-color: var(--body-bg);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* ================================
+   📝 Typography
+=================================*/
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* ================================
+   📌 Layout (Sidebar + Main Content)
+=================================*/
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 1rem;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.sidebar h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 1rem 0;
+}
+
+.sidebar ul li a {
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 2rem;
+  flex: 1;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}
+
+/* ================================
+   🃏 Card Styling
+=================================*/
+.card-o {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: 1.5rem auto;
+  width: 95%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-o:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.overview-title {
+  margin-top: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid #eee;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.overview-text {
+  width: 80%;
+  margin: 1rem auto;
+  text-align: center;
+  color: var(--text-light);
+}
+
+/* ================================
+   🖼️ Image + Caption Divider
+=================================*/
+.divider {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.divider > div {
+  flex: 1 1 45%;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.divider > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.overview-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+}
+
+.divider ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--text-dark);
+}
+
+.divider ul li:first-child {
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+.divider ul li:last-child {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* ================================
+   🔳 Grid Info Cards
+=================================*/
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.info-card {
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+  background: var(--secondary-color);
+  color: var(--white);
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  line-height: 60px;
+}
+
+/* ================================
+   🔄 How It Works Flow
+=================================*/
+.how-it-works-flow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.flow-step {
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+  padding: 1rem 0.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.flow-step:hover {
+  transform: translateY(-5px);
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+
+.flow-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin: 0 auto 1rem;
+  border: 3px solid var(--white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.flow-step:hover .flow-icon {
+  background-color: var(--success-color);
+  transform: scale(1.1);
+}
+
+.flow-step h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.flow-step p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* ================================
+   📊 Data Sources List
+=================================*/
+.data-source-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.data-source-list li {
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.data-source-list li i {
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+}
+
+.data-source-list a {
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.data-source-list a:hover {
+  color: var(--white);
+  background-color: var(--primary-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}

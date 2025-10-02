@@ -1,0 +1,160 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="dashboard-container">
+  <!-- Header -->
+  <header class="dashboard-header">
+    <h1>Rwanda Climate Risk Dashboard</h1>
+    <p>Real-time climate monitoring and risk assessment</p>
+  </header>
+
+  <!-- KPI Cards -->
+  <section class="kpi-section">
+    <div class="kpi-card">
+      <div class="kpi-icon">📍</div>
+      <div class="kpi-content">
+        <h3 id="kpi-districts">0</h3>
+        <p>Districts</p>
+      </div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon">🏘️</div>
+      <div class="kpi-content">
+        <h3 id="kpi-sectors">0</h3>
+        <p>Sectors</p>
+      </div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon">🌡️</div>
+      <div class="kpi-content">
+        <h3 id="kpi-temperature">0°C</h3>
+        <p>Avg Temperature</p>
+      </div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon">🌧️</div>
+      <div class="kpi-content">
+        <h3 id="kpi-rainfall">0mm</h3>
+        <p>Avg Rainfall</p>
+      </div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-icon">💧</div>
+      <div class="kpi-content">
+        <h3 id="kpi-soil">0%</h3>
+        <p>Soil Moisture</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top 10 Sectors at Risk -->
+  <section class="risk-overview">
+    <div class="section-header">
+      <h2>Top 10 Sectors at Risk</h2>
+    </div>
+    <div class="top-sectors-grid" id="top-sectors-grid">
+      <!-- Populated by JS -->
+    </div>
+  </section>
+
+  <!-- Climate Metric Buttons -->
+  <section class="metric-controls">
+    <h2>Climate Metrics</h2>
+    <div class="button-group">
+      <button class="metric-btn active" data-metric="temperature">
+        <span class="btn-icon">🌡️</span>
+        Temperature
+      </button>
+      <button class="metric-btn" data-metric="rainfall">
+        <span class="btn-icon">🌧️</span>
+        Rainfall
+      </button>
+      <button class="metric-btn" data-metric="soil">
+        <span class="btn-icon">💧</span>
+        Soil Moisture
+      </button>
+    </div>
+  </section>
+
+  <!-- Map and Charts Section -->
+  <section class="map-charts-section">
+    <div class="map-container">
+      <h2>Hazard Risk Zones</h2>
+      <div class="filter-controls">
+        <select id="filter-province" class="filter-select">
+          <option value="">All Provinces</option>
+        </select>
+        <select id="filter-district" class="filter-select">
+          <option value="">All Districts</option>
+        </select>
+        <select id="filter-year" class="filter-select">
+          <option value="">All Years</option>
+        </select>
+        <select id="filter-month" class="filter-select">
+          <option value="">All Months</option>
+        </select>
+      </div>
+      <div id="map"></div>
+    </div>
+
+    <div class="charts-container">
+      <div class="chart-wrapper">
+        <h3>Climate Trend Over Time</h3>
+        <canvas id="trend-chart"></canvas>
+      </div>
+      <div class="chart-wrapper">
+        <h3>Top 10 High-Risk Sectors</h3>
+        <canvas id="bar-chart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data Table -->
+  <section class="table-section">
+    <h2>Climate Risk Data</h2>
+    <div class="table-wrapper">
+      <table id="data-table">
+        <thead>
+          <tr>
+            <th>District</th>
+            <th>Sector</th>
+            <th>Temperature (°C)</th>
+            <th>Rainfall (mm)</th>
+            <th>Soil Moisture (%)</th>
+            <th>Potential Disasters</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!-- Populated by JS -->
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- AI Summary -->
+  <section class="ai-summary-section">
+    <h2>AI-Powered Risk Analysis</h2>
+    <div class="ai-container">
+      <div class="ai-summary-card">
+        <h3>📊 Summary</h3>
+        <div id="ai-summary">Analyzing climate data...</div>
+      </div>
+      <div class="ai-summary-card">
+        <h3>🎯 Key Interventions & Recommendations</h3>
+        <div id="ai-interventions">Loading recommendations...</div>
+      </div>
+      <div class="ai-summary-card">
+        <h3>⚠️ High-Risk Regions</h3>
+        <div id="ai-high-risk">Identifying high-risk areas...</div>
+      </div>
+      <div class="ai-summary-card">
+        <h3>🛡️ Mitigation Strategies by Region</h3>
+        <div id="ai-mitigation">Generating mitigation plans...</div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %} {% block scripts %}
+<!-- Scripts -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="{% static 'js/dashmap.js' %}"></script>
+{% endblock %}

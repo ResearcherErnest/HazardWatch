@@ -1,0 +1,193 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<!-- KPI Section -->
+
+<div class="card-griddashboard">
+  <!-- Flood Events -->
+  <div class="card kpi-card">
+    <div class="kpi-top">
+      <div class="kpi-icon flood"><i class="fas fa-water"></i></div>
+      <div class="kpi-label">Flood Events</div>
+    </div>
+    <div class="kpi-value" id="kpi-flood-value">...</div>
+  </div>
+
+  <!-- Drought Alerts -->
+  <div class="card kpi-card">
+    <div class="kpi-top">
+      <div class="kpi-icon drought"><i class="fas fa-sun"></i></div>
+      <div class="kpi-label">Drought Alerts</div>
+    </div>
+    <div class="kpi-value" id="kpi-drought-value">...</div>
+  </div>
+
+  <!-- Landslide Risks -->
+  <div class="card kpi-card">
+    <div class="kpi-top">
+      <div class="kpi-icon landslide"><i class="fas fa-mountain"></i></div>
+      <div class="kpi-label">Landslide Risks</div>
+    </div>
+    <div class="kpi-value" id="kpi-landslide-value">...</div>
+  </div>
+
+  <!-- Total Events -->
+  <div class="card kpi-card">
+    <div class="kpi-top">
+      <div class="kpi-icon zone">
+        <i class="fas fa-exclamation-triangle"></i>
+      </div>
+      <div class="kpi-label">Total Events</div>
+    </div>
+    <div class="kpi-value" id="kpi-total-value">...</div>
+  </div>
+
+  <!-- Total Deaths -->
+  <div class="card kpi-card">
+    <div class="kpi-top">
+      <div class="kpi-icon danger">
+        <i class="fas fa-skull-crossbones"></i>
+      </div>
+      <div class="kpi-label">Total Deaths</div>
+    </div>
+    <div class="kpi-value" id="kpi-deaths-value">...</div>
+  </div>
+
+  <!-- Total Affected -->
+  <div class="card kpi-card">
+    <div class="kpi-top">
+      <div class="kpi-icon warning"><i class="fas fa-users"></i></div>
+      <div class="kpi-label">Total Affected</div>
+    </div>
+    <div class="kpi-value" id="kpi-affected-value">...</div>
+  </div>
+</div>
+<!-- Regional Hazard Map History -->
+<div class="main-grid">
+  <div class="overview-title">Regional Hazard Map History</div>
+
+  <!-- Map Section -->
+  <div class="map-section">
+    <div class="map-control">
+      <div class="map-filter-group">
+        <label for="province-filter">Province:</label>
+        <select id="province-filter">
+          <option value="all">All Provinces</option>
+        </select>
+      </div>
+      <div class="map-filter-group">
+        <label for="subtype-filter">Disaster Type:</label>
+        <select id="subtype-filter">
+          <option value="all">All Types</option>
+        </select>
+      </div>
+      <div class="map-filter-group">
+        <label for="year-filter">Year:</label>
+        <select id="year-filter">
+          <option value="all">All Years</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="map-container">
+      <div id="map"></div>
+    </div>
+  </div>
+
+  <!-- Map Legend -->
+  <div class="overview-title">People Affected</div>
+  <div class="map-legend">
+    <div class="legend-item">
+      <div class="legend-color" style="background: #800026"></div>
+      <span>> 5000</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background: #bd0026"></div>
+      <span>2001 - 5000</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background: #e31a1c"></div>
+      <span>1001 - 2000</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background: #fc4e2a"></div>
+      <span>501 - 1000</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background: #fd8d3c"></div>
+      <span>101 - 500</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background: #feb24c"></div>
+      <span>51 - 100</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background: #fed976"></div>
+      <span>11 - 50</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color" style="background: #ffeda0"></div>
+      <span>0 - 10</span>
+    </div>
+  </div>
+</div>
+
+<!-- AI Insights -->
+<div class="card-body" id="ai-summary">
+  <p class="text-muted">Insights will appear here after applying filters...</p>
+</div>
+
+<!-- AI Checklist -->
+<div id="ai-checklist">
+  <!-- <p class="text-muted">AI checklist will appear here...</p> -->
+</div>
+
+<!-- Real-time Alerts -->
+<div class="alert-header">
+  <div class="overview-title" style="justify-content: center">
+    Real-time Alerts
+  </div>
+  <div class="view-all">View All <i class="fas fa-angle-right"></i></div>
+</div>
+
+<div class="alerts-container">
+  <div class="alert-card critical">
+    <div class="alert-type">
+      <i class="fas fa-exclamation-circle"></i> EMERGENCY ALERT
+    </div>
+    <div class="alert-message">
+      Major flood warning for Zone A. Expected rainfall: 5 inches in next 24
+      hours. Evacuation advised.
+    </div>
+    <div class="alert-time">10 minutes ago</div>
+  </div>
+
+  <div class="alert-card warning">
+    <div class="alert-type">
+      <i class="fas fa-mountain"></i> LANDSLIDE WARNING
+    </div>
+    <div class="alert-message">
+      High risk of landslides in Hillside District. Avoid travel in this area
+      until situation improves.
+    </div>
+    <div class="alert-time">2 hours ago</div>
+  </div>
+
+  <div class="alert-card drought">
+    <div class="alert-type"><i class="fas fa-sun"></i> DROUGHT WARNING</div>
+    <div class="alert-message">
+      Drought conditions worsening in Northern Region. Water conservation
+      measures in effect.
+    </div>
+    <div class="alert-time">5 hours ago</div>
+  </div>
+
+  <div class="alert-card flood">
+    <div class="alert-type"><i class="fas fa-water"></i> FLOOD WATCH</div>
+    <div class="alert-message">
+      Potential flooding in coastal areas. Monitor local conditions and prepare
+      emergency kits.
+    </div>
+    <div class="alert-time">Yesterday</div>
+  </div>
+</div>
+
+{% endblock %}

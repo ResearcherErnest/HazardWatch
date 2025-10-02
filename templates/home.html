@@ -1,0 +1,183 @@
+{% extends 'base.html' %} {% block content %}
+<!-- Overview Page Content -->
+<h2 class="overview-title">
+  <i class="fas fa-project-diagram"></i> Project Overview
+</h2>
+<p class="overview-text">
+  <strong>HazardWatch Rwanda</strong> is an innovative project designed to
+  strengthen community resilience and disaster risk management in Rwanda. The
+  project directly addresses the increasing challenges posed by climate change,
+  which has led to frequent floods, droughts, and landslides that threaten
+  lives, livelihoods, and infrastructure across the country.
+</p>
+
+<div class="divider">
+  <div>
+    <img
+      src="https://www.climatechangenews.com/wp-content/files/2019/04/Members-of-the-Ruhinga-village-from-Karongi-reconstruct-a-road-section-ahead-of-Rains.jpg"
+      alt="Landslide in Karongi"
+      class="overview-image"
+    />
+    <ul>
+      <li>Landslide in Karongi District</li>
+      <li>Source: Sophie Mbugua (April 9, 2019)</li>
+    </ul>
+  </div>
+  <div>
+    <img
+      src="https://cloudfront-us-east-2.images.arcpublishing.com/reuters/7QQ3W4CI45JXDNRXJOPWHXR66I.jpg"
+      alt="Flooding in Rubavu"
+      class="overview-image"
+    />
+    <ul>
+      <li>Flooding in Rubavu district after heavy rains</li>
+      <li>Source: Jean Bizimana (May 3-4, 2023)</li>
+    </ul>
+  </div>
+</div>
+
+<h2 class="overview-title"><i class="fas fa-bullseye"></i> Core Objectives</h2>
+
+<div class="card-grid">
+  <div class="info-card">
+    <div class="card-icon"><i class="fas fa-map-marked-alt"></i></div>
+    <p>
+      The primary goal of <strong>HazardWatch Rwanda</strong> is to provide a
+      comprehensive tool for predicting, monitoring, and responding to
+      climate-related risks. Hazard zones are mapped and shared with
+      policymakers and communities.
+    </p>
+  </div>
+
+  <div class="info-card">
+    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+    <p>
+      Predictive analytics forecast risks such as floods, droughts, and
+      landslides. Alerts are sent via SMS and mobile notifications, reaching
+      even remote areas.
+    </p>
+  </div>
+
+  <div class="info-card">
+    <div class="card-icon"><i class="fas fa-bell"></i></div>
+    <p>
+      Early warnings empower communities to take timely action, reducing
+      potential loss of life and property. The system also supports long-term
+      disaster preparedness.
+    </p>
+  </div>
+
+  <div class="info-card">
+    <div class="card-icon"><i class="fas fa-users"></i></div>
+    <p>
+      Authorities and community organizations can use the data to develop
+      targeted risk-reduction strategies and emergency plans. Local knowledge is
+      integrated into disaster management.
+    </p>
+  </div>
+
+  <div class="info-card">
+    <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+    <p>
+      HazardWatch Rwanda builds a safer, more resilient society. Combining
+      technology with community-based planning strengthens local capacity to
+      respond effectively.
+    </p>
+  </div>
+
+  <div class="info-card">
+    <div class="card-icon"><i class="fas fa-globe"></i></div>
+    <p>
+      This initiative reflects Rwanda’s commitment to sustainable development
+      and climate resilience, offering a scalable model replicable in other
+      regions facing similar risks.
+    </p>
+  </div>
+</div>
+<h2 class="overview-title"><i class="fas fa-cogs"></i> How It Works</h2>
+<div class="how-it-works-flow">
+  <div class="flow-step">
+    <div class="flow-icon"><i class="fas fa-database"></i></div>
+    <h3>Data Collection</h3>
+    <p>
+      Gathers sensor readings, satellite imagery, and community reports to feed
+      the system.
+    </p>
+  </div>
+
+  <div class="flow-step">
+    <div class="flow-icon"><i class="fas fa-satellite-dish"></i></div>
+    <h3>Predict & Monitor</h3>
+    <p>Uses sensor data, satellite imagery, and forecasts to track hazards.</p>
+  </div>
+
+  <div class="flow-step">
+    <div class="flow-icon"><i class="fas fa-map-marked-alt"></i></div>
+    <h3>Visualize Risks</h3>
+    <p>
+      Interactive maps show hazard-prone zones at all administrative levels.
+    </p>
+  </div>
+
+  <div class="flow-step">
+    <div class="flow-icon"><i class="fas fa-bell"></i></div>
+    <h3>Send Alerts</h3>
+    <p>Delivers early warnings via SMS and mobile notifications.</p>
+  </div>
+
+  <div class="flow-step">
+    <div class="flow-icon"><i class="fas fa-users"></i></div>
+    <h3>Empower Communities</h3>
+    <p>Provides checklists, planning resources, and quick actions.</p>
+  </div>
+</div>
+
+<h2 class="overview-title">Why It’s Unique</h2>
+<p class="overview-text">
+  HazardWatch Rwanda is community-centered. Unlike generic hazard dashboards, it
+  tailors alerts and resources to Rwanda’s geography and governance model. It
+  ensures inclusivity with offline-friendly outputs (SMS, printable checklists,
+  exportable reports), so even remote communities can benefit.
+</p>
+<h2 class="overview-title"><i class="fas fa-database"></i> Data Sources</h2>
+<ul class="data-source-list">
+  <li>
+    <i class="fas fa-map"></i> Rwanda shapefile from
+    <a
+      href="https://geospatial-open-data-site-nisrgis.hub.arcgis.com/datasets/ded3c363069f4dd2b11275e2510f4ddd_1/"
+      target="_blank"
+      >NISR Geospatial Portal</a
+    >
+  </li>
+  <li>
+    <i class="fas fa-exclamation-triangle"></i> Historical Disasters data from
+    <a
+      href="https://doc.emdat.be/docs/data-structure-and-content/emdat-public-table/"
+      target="_blank"
+      >EM-DAT</a
+    >
+  </li>
+  <li>
+    <i class="fas fa-tint"></i> Soil moisture from
+    <a
+      href="https://cds.climate.copernicus.eu/datasets/satellite-soil-moisture?tab=download"
+      target="_blank"
+      >Copernicus Climate Data Store</a
+    >
+  </li>
+  <li>
+    <i class="fas fa-thermometer-half"></i> Temperature data from
+    <a
+      href="https://downloads.psl.noaa.gov/Datasets/cpc_global_temp/"
+      target="_blank"
+      >NOAA</a
+    >
+  </li>
+  <li>
+    <i class="fas fa-cloud-rain"></i> Rainfall data from
+    <a href="https://climateserv.servirglobal.net/map" target="_blank"
+      >Climateserv</a
+    >
+  </li>
+</ul>
+{% endblock %}
